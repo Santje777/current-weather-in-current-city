@@ -27,5 +27,17 @@ def enter_a_city():
     else:
         print("You did not enter a city and/or temperature. Please try again.")
         
-enter_a_city()
-display_city_and_temperature()
+weather = {
+  "city":"Lisbon",
+  "country":"Portugal",
+  "temperature": 17.94,
+  "humidity":77
+}
+
+def display_fahrenheit(celsius_temperature):
+  """Displays the temperature in fahrenheit"""
+  fahrenheit = (float(celsius_temperature) * 9 / 5) + 32
+  return fahrenheit
+fahrenheit= display_fahrenheit(weather['temperature'])
+
+print(f"It is {round(weather['temperature'])}ºC ({round(fahrenheit)}ªF) in {weather['city']}, {weather['country']}, the humidity level is {weather['humidity']}%.")
