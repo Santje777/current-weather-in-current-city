@@ -61,3 +61,22 @@ index = 0
 for temperature in forecast['daily']:
   print(f"Day {index+1}: {round(temperature)}ºC")
   index = index + 1
+  
+import requests
+from rich import print
+
+city = input("Enter a city:")
+api_key = "3734of2cfc5035aca32f96t5a9b478fb"
+api_url = f"https://api.shecodes.io/weather/v1/current?query={city}&key={api_key}"
+
+response = requests.get(api_url)
+print(response)
+
+weather = response.json()
+print(weather)
+
+country = weather['country']
+temperature = weather['temperature']['current']
+humidity = weather['temperature']['humidity']
+wind_speed = weather['wind']['speed']
+print(f"The temperature of {city} in {country} is currently {round(temperature)}ºC and the humidity is {humidity}% and the windspeed is {round(wind_speed)}km/h")
