@@ -41,3 +41,23 @@ def display_fahrenheit(celsius_temperature):
 fahrenheit= display_fahrenheit(weather['temperature'])
 
 print(f"It is {round(weather['temperature'])}ºC ({round(fahrenheit)}ªF) in {weather['city']}, {weather['country']}, the humidity level is {weather['humidity']}%.")
+
+forecast = {
+  "city":"Lisbon",
+  "country":"Portugal",
+  "daily":
+    [
+      17.76,
+      13.08,
+      12.14,
+      11.25,
+      14.29
+    ]
+}
+
+print(f"The forecast for {forecast['city']}, {forecast['country']} for the next 5 days is:")
+
+index = 0 
+for temperature in forecast['daily']:
+  print(f"Day {index+1}: {round(temperature)}ºC")
+  index = index + 1
